@@ -2,7 +2,7 @@ const data = [
     {
         'id': 3,
         'name': 'Procesamiento de vídeos',
-        'img': '/src/assets/portal4.png',
+        'img': '/assets/portal4.png',
         'client': 'Cliente externo',
         'year': 2024,
         'descr': 'Eliminación de marcas de agua de un vídeo.',
@@ -22,7 +22,7 @@ const data = [
     {
         'id': 2,
         'name': 'Speech to text',
-        'img': '/src/assets/portal3.png',
+        'img': '/assets/portal3.png',
         'client': 'Cliente externo',
         'year': 2024,
         'descr': 'Transcripción del audio de un vídeo a texto.',
@@ -41,7 +41,7 @@ const data = [
     {
         'id': 1,
         'name': 'Portal de escuchas',
-        'img': '/src/assets/portal2.png',
+        'img': '/assets/portal2.png',
         'client': 'Cliente externo',
         'year': 2023,
         'descr': 'Aplicación para escuchar las grabaciones y evaluar la calidad de la venta.',
