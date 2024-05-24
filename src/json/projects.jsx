@@ -1,6 +1,6 @@
 const data = [
     {
-        'id': 3,
+        'id': 4,
         'name': 'Procesamiento de vídeos',
         'img': '/img/portal4.png',
         'client': 'Cliente externo',
@@ -20,7 +20,7 @@ const data = [
         ]
     },
     {
-        'id': 2,
+        'id': 3,
         'name': 'Speech to text',
         'img': '/img/portal3.png',
         'client': 'Cliente externo',
@@ -39,7 +39,7 @@ const data = [
         ]
     },
     {
-        'id': 1,
+        'id': 2,
         'name': 'Portal de escuchas',
         'img': '/img/portal2.png',
         'client': 'Cliente externo',
@@ -60,6 +60,26 @@ const data = [
             {
                 'name': 'Web',
                 'url': 'https://cqa.wimjapps.com'
+            }
+        ]
+    },
+    {
+        'id': 1,
+        'name': 'Sistema de recomendación',
+        'img': '/img/portal5.png',
+        'client': 'Cliente externo',
+        'year': 2022,
+        'descr': 'Sistema de recomendación de productos basados en filtrado colaborativo.',
+        'description': 'Este proyecto es un desarrollo propio que consiste en implementar un tipo de filtro de productos para facilitar la recomendación de productos a un usuario del sistema.\n\nEl programa está desarrollado en un notebook de Jupyter y funciona basandose en la similitud de gustos entre usuarios.\n\n Cuando un usuario puntúa a un determinado producto se cálcula la correlación de Pearson con los demás usuarios que han puntuado ese mismo producto y se recomienda otra serie de productos de los usuarios con gustos similares.',
+        'languages': [
+            "python",
+            "jupyter",
+            "git",
+        ],
+        'links': [
+            {
+                'name': 'GitHub',
+                'url': 'https://github.com/TiNaJoXx/recommendation-system'
             }
         ]
     },
