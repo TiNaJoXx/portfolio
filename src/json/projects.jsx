@@ -1,5 +1,29 @@
 const data = [
     {
+        'id': 5,
+        'name': 'Pokedex',
+        'img': '/img/portal6.png',
+        'client': 'Cliente externo',
+        'year': 2024,
+        'descr': 'Desarrollo web de la pokedex.',
+        'description': 'Este proyecto es un desarrollo propio con el objetivo de visualizar la pokedex (lista de pokemon) y el detalle de cada pokemon.\n\nHay diversa funcionalidad como el empleo de la famosa API "pokeapi" y un buscador para filtrar elementos de un listado.\n\nAl entrar al detalle de un determiando pokemon, se visualizan los detalles del pokemon.',
+        'languages': [
+            "react",
+            "js",
+            "git",
+        ],
+        'links': [
+            {
+                'name': 'Web',
+                'url': 'https://pokedex1-1.netlify.app/'
+            },
+            {
+                'name': 'GitHub',
+                'url': 'https://github.com/TiNaJoXx/pokedex'
+            }
+        ]
+    },
+    {
         'id': 4,
         'name': 'Procesamiento de vídeos',
         'img': '/img/portal4.png',
