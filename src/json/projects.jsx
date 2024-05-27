@@ -9,8 +9,11 @@ const data = [
         'description': 'Este proyecto es un desarrollo propio con el objetivo de visualizar la pokedex (lista de pokemon) y el detalle de cada pokemon.\n\nHay diversa funcionalidad como el empleo de la famosa API "pokeapi" y un buscador para filtrar elementos de un listado.\n\nAl entrar al detalle de un determiando pokemon, se visualizan los detalles del pokemon.',
         'languages': [
             "react",
+            "html",
+            "css",
             "js",
             "git",
+            "figma",
         ],
         'links': [
             {
@@ -20,6 +23,10 @@ const data = [
             {
                 'name': 'GitHub',
                 'url': 'https://github.com/TiNaJoXx/pokedex'
+            },
+            {
+                'name': 'Figma',
+                'url': 'https://www.figma.com/design/zwBJlJcTsMufp1AonuFDVm/Pokedex?node-id=0-1&t=0BWK9Gt2nHEZpIc5-1'
             }
         ]
     },
