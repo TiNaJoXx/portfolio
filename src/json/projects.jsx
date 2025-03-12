@@ -1,5 +1,30 @@
 const data = [
     {
+        'id': 6,
+        'name': 'Masterclass Inteligencia Artificial',
+        'img': '/img/portal7.png',
+        'client': 'Cliente externo',
+        'year': 2025,
+        'descr': 'Portal para acceder a seis Masterclasses sobre Inteligencia Artificial.',
+        'description': 'Este proyecto ha sido desarrollado para la Universidad Internacional de La Rioja (UNIR) con el propósito de implementar un portal de acceso exclusivo para estudiantes, en el que se ofrece la posibilidad de visualizar seis masterclasses sobre la Inteligencia Artificial.\n\nLa plataforma es una aplicación que incorpora autenticación de usuarios mediante Microsoft, permitiendo a los estudiantes acceder directamente a un menú para reproducir las masterclasses. Además, el sistema realiza un seguimiento detallado de cada estudiante, monitorizando sus acciones dentro de la aplicación. Durante la reproducción de cada masterclass, se presentan preguntas a los usuarios, con el objetivo de recopilar información sobre su nivel de conocimientos.\n\nEl desarrollo del frontend de la aplicación se llevó a cabo utilizando React, garantizando un sistema ágil, flexible y eficiente. El backend se ha implementado con Django, por su robustez y capacidad para gestionar procesos complejos de manera eficaz.',
+        'languages': [
+            "react",
+            "html",
+            "css",
+            "js",
+            "django",
+            "python",
+            "sql",
+            "git",
+        ],
+        'links': [
+            {
+                'name': 'Web',
+                'url': 'https://techtalks.unir.net'
+            }
+        ]
+    },
+    {
         'id': 5,
         'name': 'Pokedex',
         'img': '/img/portal6.png',
