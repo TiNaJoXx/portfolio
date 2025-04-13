@@ -1,10 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import {
-    Button,
     Dialog,
     DialogHeader,
     DialogBody,
-    DialogFooter,
     IconButton
 } from "@material-tailwind/react";
 import { XMarkIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
@@ -12,10 +10,27 @@ import data from '../json/projects'
 import { iconComponents} from '../assets/icons/Icons';
 
 const Modal = ({ isOpen, onClose, selectedProject }) => {
+    const [dialogSize, setDialogSize] = useState("xl");
+
     const project = data.find(item => item.id === selectedProject);
 
+    useEffect(() => {
+        const updateDialogSize = () => {
+            if (window.innerWidth <= 768) {
+                setDialogSize("xxl");
+            } else {
+                setDialogSize("xl");
+            }
+        };
+
+        updateDialogSize();
+        window.addEventListener("resize", updateDialogSize);
+
+        return () => window.removeEventListener("resize", updateDialogSize); // Limpieza
+    }, []);
+
     return (
-        <Dialog open={isOpen} handler={onClose} size={"xl"} className='px-3 py-3 lg:p-5 -mt-24 lg:-mt-0'>
+        <Dialog open={isOpen} handler={onClose} size={dialogSize} className='px-3 py-3 lg:p-5'>
             <DialogHeader className="justify-between w-full">
                 <h3 className='text-xl lg:text-2xl'>{project?.name}</h3>
                 <IconButton
