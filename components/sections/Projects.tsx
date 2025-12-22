@@ -5,6 +5,8 @@ import { useState } from "react";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 import CardComponent from '../CardComponent';
 
@@ -152,7 +154,10 @@ const dataProjects = [
 ]
 
 function Projects() {
-    const [visibleProjects, setVisibleProjects] = useState(3);
+    const theme = useTheme();
+    const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+
+    const [visibleProjects, setVisibleProjects] = useState(isMdUp ? 3 : 4);
     const [expanded, setExpanded] = useState(false);
 
     const handleLoadMore = () => {
@@ -161,18 +166,18 @@ function Projects() {
     };
 
     return (
-        <Box sx={{ width: "100%", marginY: 4 }}>
+        <Box sx={{ width: "100%", marginY: isMdUp ? 4 : 0 }}>
             <h2 className='mb-8 text-xl sm:text-2xl'>Proyectos</h2>
-            <Grid container spacing={2} rowSpacing={4} columnSpacing={4}>
+            <Grid container rowSpacing={isMdUp ? 4 : 2} columnSpacing={isMdUp ? 4 : 2}>
                 {
                     dataProjects.slice(0, visibleProjects).map((project, index) => 
                         <Grid 
                             key={project.id} 
-                            size={4}
+                            size={isMdUp ? 4 : 6}
                             sx={{
-                                opacity: expanded || index < 3 ? 1 : 0,
+                                opacity: expanded || index < (isMdUp ? 3 : 4) ? 1 : 0,
                                 transform:
-                                    expanded || index < 3
+                                    expanded || index < (isMdUp ? 3 : 4)
                                     ? "translateY(0)"
                                     : "translateY(20px)",
                                 transition: "opacity 0.6s ease, transform 0.6s ease",
@@ -190,7 +195,7 @@ function Projects() {
                 }
             </Grid>
             {visibleProjects < dataProjects.length && (
-                <Box sx={{ textAlign: "center", marginTop: 8 }}>
+                <Box sx={{ textAlign: "center", marginTop: isMdUp ? 8 : 4 }}>
                     <Button
                         sx={{ textTransform: "none" }}
                         onClick={handleLoadMore}

@@ -6,6 +6,8 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 interface CardProps {
     imageSrc: string;
@@ -18,6 +20,9 @@ interface CardProps {
 }
 
 function CardComponent({ imageSrc, title, descr, links }: CardProps) {
+    const theme = useTheme();
+    const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+        
     return (
         <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
             <CardMedia
@@ -28,13 +33,13 @@ function CardComponent({ imageSrc, title, descr, links }: CardProps) {
             />
             <CardContent sx={{ flexGrow: 1 }}>
                 <h5 className='text-lg mb-2'>{ title }</h5>
-                <p className='text-slate-600 text-base line-clamp-3' title={ descr }>
+                <p className={`text-slate-600 line-clamp-3 ${isMdUp ? "text-base" : "text-sm"} `} title={ descr }>
                     { descr }
                 </p>
             </CardContent>
             <CardActions sx={{ borderTop: 1, borderColor: "#efefef" }}>
                 <Grid container spacing={1} sx={{ width: "100%" }}>
-                    <Grid size={4}>
+                    <Grid size={isMdUp ? 4 : 12}>
                         <Button sx={{
                             width: "100%",
                             textTransform: 'none',
@@ -46,7 +51,7 @@ function CardComponent({ imageSrc, title, descr, links }: CardProps) {
                         links.map((link, index) => {
                             if(link.name === "Web" && link.url !== "") {
                                 return (
-                                    <Grid key={link.url} size={4}>
+                                    <Grid key={link.url} size={isMdUp ? 4 : 12}>
                                         <Button sx={{
                                             width: "100%",
                                             textTransform: 'none',
@@ -64,7 +69,7 @@ function CardComponent({ imageSrc, title, descr, links }: CardProps) {
                                 )
                             } else if(link.name === "Web" && link.url === "") {
                                 return (
-                                    <Grid key={`${link.url}_ ${index}`} size={4}>
+                                    <Grid key={`${link.url}_ ${index}`} size={isMdUp ? 4 : 12}>
                                         <Button disabled sx={{
                                             width: "100%",
                                             textTransform: 'none',
@@ -83,7 +88,7 @@ function CardComponent({ imageSrc, title, descr, links }: CardProps) {
                                 )
                             } else if(link.name === "GitHub" && link.url !== "") {
                                 return (
-                                    <Grid key={link.url} size={4}>
+                                    <Grid key={link.url} size={isMdUp ? 4 : 12}>
                                         <Button sx={{
                                             width: "100%",
                                             textTransform: 'none',
@@ -101,7 +106,7 @@ function CardComponent({ imageSrc, title, descr, links }: CardProps) {
                                 )
                             } else if(link.name === "GitHub" && link.url === "") {
                                 return (
-                                    <Grid key={link.url} size={4}>
+                                    <Grid key={link.url} size={isMdUp ? 4 : 12}>
                                         <Button disabled sx={{
                                             width: "100%",
                                             textTransform: 'none',

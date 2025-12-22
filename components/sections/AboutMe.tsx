@@ -3,32 +3,37 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LinearProgress from '@mui/material/LinearProgress';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 function AboutMe() {
+    const theme = useTheme();
+    const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+
     return (
         <Box sx={{ width: "100%", marginY: 4 }}>
             <Grid container spacing={2} sx={{ paddingY: 2, borderBottom: 1, borderTop: 1, borderColor: "#efefef" }}>
                 <Grid sx={{ textAlign: 'center' }} size={4}>
-                    <h4 className='text-3xl font-black text-slate-900 mb-1'>
+                    <h4 className={`${isMdUp ? "text-3xl" : "text-2xl"} font-black text-slate-900 mb-1`}>
                         5+
                     </h4>
-                    <p className="text-sm text-slate-500">Años de Experiencia</p>
+                    <p className="text-sm text-slate-500">Años de {!isMdUp && <br/>} Experiencia</p>
                 </Grid>
                 <Grid sx={{ textAlign: 'center' }} size={4}>
-                    <h4 className='text-3xl font-black text-slate-900 mb-1'>
+                    <h4 className={`${isMdUp ? "text-3xl" : "text-2xl"} font-black text-slate-900 mb-1`}>
                         15+
                     </h4>
-                    <p className="text-sm text-slate-500">Proyectos Completados</p>
+                    <p className="text-sm text-slate-500">Proyectos {!isMdUp && <br/>} Completados</p>
                 </Grid>
                 <Grid sx={{ textAlign: 'center' }} size={4}>
-                    <h4 className='text-3xl font-black text-slate-900 mb-1'>
+                    <h4 className={`${isMdUp ? "text-3xl" : "text-2xl"} font-black text-slate-900 mb-1`}>
                         100%
                     </h4>
-                    <p className="text-sm text-slate-500">Clientes Satisfechos</p>
+                    <p className="text-sm text-slate-500">Clientes {!isMdUp && <br/>} Satisfechos</p>
                 </Grid>
             </Grid>
             <Grid container spacing={10} sx={{ marginY: 8 }}>
-                <Grid size={7}>
+                <Grid size={isMdUp ? 7 : 12}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                         <div className="bg-blue-100 p-2 rounded-lg text-[#3b82f6]">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
@@ -43,8 +48,8 @@ function AboutMe() {
                             <div className='w-3 h-3 rounded-full bg-[#3b82f6]'></div>
                         </Grid>
                         <Grid size={11} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <h5 className='text-lg'>Data Scientist / Full Stack Developer</h5>
-                            <div className="bg-blue-100 p-2 rounded-lg text-[#3b82f6]">
+                            <h5 className={`${isMdUp ? "text-lg" : "text-base"}`}>Data Scientist / {!isMdUp && <br/>} Full Stack Developer</h5>
+                            <div className={`bg-blue-100 p-2 rounded-lg text-[#3b82f6] ${!isMdUp && "text-xs"}`}>
                                 sep. 2020 - Presente
                             </div>
                         </Grid>
@@ -52,15 +57,15 @@ function AboutMe() {
                             <div className='w-0.5 h-full bg-[#efefef]'></div>
                         </Grid>
                         <Grid size={11} sx={{ marginBottom: 6 }}>
-                            <p className='text-lg mb-3'>Grupo PROEDUCA</p>
-                            <p>Desarrollo de soluciones tecnológicas orientadas a la obtención, procesamiento y explotación de grandes volúmenes de datos, mediante la creación de scrapers y la aplicación de técnicas de Big Data. Diseño e implementación de sistemas basados en inteligencia artificial. Desarrollo full stack de aplicaciones, abarcando el diseño de arquitecturas y bases de datos escalables. Experiencia en procesos ETL para la integración, transformación y procesamiento de datos, optimizando la gestión de flujos de información complejos. Administración de servidores, despliegue de sistemas en entornos de producción y automatización de tareas mediante el uso de procesos en segundo plano.</p>
+                            <p className={`${isMdUp ? "text-lg" : "text-base"} mb-3`}>Grupo PROEDUCA</p>
+                            <p className={`${!isMdUp && "text-sm"}`}>Desarrollo de soluciones tecnológicas orientadas a la obtención, procesamiento y explotación de grandes volúmenes de datos, mediante la creación de scrapers y la aplicación de técnicas de Big Data. Diseño e implementación de sistemas basados en inteligencia artificial. Desarrollo full stack de aplicaciones, abarcando el diseño de arquitecturas y bases de datos escalables. Experiencia en procesos ETL para la integración, transformación y procesamiento de datos, optimizando la gestión de flujos de información complejos. Administración de servidores, despliegue de sistemas en entornos de producción y automatización de tareas mediante el uso de procesos en segundo plano.</p>
                         </Grid>
                         <Grid size={1} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <div className='w-3 h-3 rounded-full bg-[#efefef]'></div>
                         </Grid>
                         <Grid size={11} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <h5 className='text-lg'>Analista de datos en proyecto de investigación</h5>
-                            <div className="bg-gray-100 p-2 rounded-lg text-gray-600">
+                            <h5 className={`${isMdUp ? "text-lg" : "text-base"}`}>Analista de datos en proyecto {!isMdUp && <br/>} de investigación</h5>
+                            <div className={`bg-gray-100 p-2 rounded-lg text-gray-600 ${!isMdUp && "text-xs"}`}>
                                 oct. 2023 - dic. 2023
                             </div>
                         </Grid>
@@ -68,15 +73,15 @@ function AboutMe() {
                             <div className='w-0.5 h-full bg-[#efefef]'></div>
                         </Grid>
                         <Grid size={11} sx={{ marginBottom: 6 }}>
-                            <p className='text-lg mb-3'>Universidad Internacional de la Rioja</p>
-                            <p>Compresión y análisis de un modelo de datos basados en encuestas lanzadas en destinos enoturísticos de España para conocer la opinión de los visitantes sobre el enoturismo. Y creación de un dashboard en Power BI que reflejen los KPIs establecidos por el cliente.</p>
+                            <p className={`${isMdUp ? "text-lg" : "text-base"} mb-3`}>Universidad Internacional de la Rioja</p>
+                            <p className={`${!isMdUp && "text-sm"}`}>Compresión y análisis de un modelo de datos basados en encuestas lanzadas en destinos enoturísticos de España para conocer la opinión de los visitantes sobre el enoturismo. Y creación de un dashboard en Power BI que reflejen los KPIs establecidos por el cliente.</p>
                         </Grid>
                         <Grid size={1} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <div className='w-3 h-3 rounded-full bg-[#efefef]'></div>
                         </Grid>
                         <Grid size={11} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <h5 className='text-lg'>Desarrollador iOS</h5>
-                            <div className="bg-gray-100 p-2 rounded-lg text-gray-600">
+                            <h5 className={`${isMdUp ? "text-lg" : "text-base"}`}>Desarrollador iOS</h5>
+                            <div className={`bg-gray-100 p-2 rounded-lg text-gray-600 ${!isMdUp && "text-xs"}`}>
                                 jun. 2019 - sep. 2020
                             </div>
                         </Grid>
@@ -84,8 +89,8 @@ function AboutMe() {
                             <div className='w-0.5 h-full bg-[#efefef]'></div>
                         </Grid>
                         <Grid size={11} sx={{ marginBottom: 6 }}>
-                            <p className='text-lg mb-3'>Radmas Technologies S.L</p>
-                            <p>Desarrollo y mantenimiento de aplicaciones móviles para iOS, aplicando principios de Clean Architecture y SOLID para garantizar soluciones escalables, mantenibles y de alta calidad. Experiencia en la gestión del ciclo completo de publicación, incluyendo la subida y despliegue de aplicaciones en la App Store.</p>
+                            <p className={`${isMdUp ? "text-lg" : "text-base"} mb-3`}>Radmas Technologies S.L</p>
+                            <p className={`${!isMdUp && "text-sm"}`}>Desarrollo y mantenimiento de aplicaciones móviles para iOS, aplicando principios de Clean Architecture y SOLID para garantizar soluciones escalables, mantenibles y de alta calidad. Experiencia en la gestión del ciclo completo de publicación, incluyendo la subida y despliegue de aplicaciones en la App Store.</p>
                         </Grid>
                     </Grid>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -103,31 +108,31 @@ function AboutMe() {
                             <div className='w-3 h-3 rounded-full bg-[#efefef] mt-2'></div>
                         </Grid>
                         <Grid size={11}>
-                            <h5 className='text-lg'>Máster Universitario en Inteligencia Artificial</h5>
+                            <h5 className={`${isMdUp ? "text-lg" : "text-base"}`}>Máster Universitario en Inteligencia Artificial</h5>
                         </Grid>
                         <Grid size={1} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <div className='w-0.5 h-full bg-[#efefef]'></div>
                         </Grid>
                         <Grid size={11} sx={{ marginBottom: 4 }}>
-                            <p className='mb-2'>Universidad Internacional de la Rioja</p>
+                            <p className={`${isMdUp ? "text-base" : "text-sm"} mb-2`}>Universidad Internacional de la Rioja</p>
                             <p className='text-[#979797] text-sm'>2021 - 2022</p>
                         </Grid>
                         <Grid size={1} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'start' }}>
                             <div className='w-3 h-3 rounded-full bg-[#efefef] mt-2'></div>
                         </Grid>
                         <Grid size={11}>
-                            <h5 className='text-lg'>Grado en Ingeniería Informática</h5>
+                            <h5 className={`${isMdUp ? "text-lg" : "text-base"}`}>Grado en Ingeniería Informática</h5>
                         </Grid>
                         <Grid size={1} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <div className='w-0.5 h-full bg-[#efefef]'></div>
                         </Grid>
-                        <Grid size={11} sx={{ marginBottom: 4 }}>
-                            <p className='mb-2'>Universidad Carlos III de Madrid</p>
+                        <Grid size={11} sx={{ marginBottom: isMdUp ? 4 : 0 }}>
+                            <p className={`${isMdUp ? "text-base" : "text-sm"} mb-2`}>Universidad Carlos III de Madrid</p>
                             <p className='text-[#979797] text-sm'>2016 - 2020</p>
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid size={5}>
+                <Grid size={isMdUp ? 5 : 12}>
                     <Box sx={{ padding: 2, borderRadius: 2, border: 1, borderColor: "#efefef", marginY: 2 }}>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 2 }}>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#3b82f6" className="size-8 rotate-90">

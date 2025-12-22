@@ -3,14 +3,19 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LinearProgress from '@mui/material/LinearProgress';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 function Skills() {
+    const theme = useTheme();
+    const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+
     return (
-        <Box sx={{ position: "relative", width: "100%", marginY: 4 }}>
+        <Box sx={{ position: "relative", width: "100%", marginY: isMdUp ? 4 : 8 }}>
             <h2 className='mb-8 text-xl sm:text-2xl'>Tecnologías</h2>
-            <Grid container spacing={8}>
+            <Grid container spacing={isMdUp ? 8 : 2}>
                 <Grid
-                    size={3}
+                    size={isMdUp ? 3 : 6}
                     sx={{
                         boxShadow: 3,
                         padding: 2,
@@ -54,7 +59,7 @@ function Skills() {
                     />
                 </Grid>
                 <Grid
-                    size={3}
+                    size={isMdUp ? 3 : 6}
                     sx={{
                         boxShadow: 3,
                         padding: 2,
@@ -87,7 +92,7 @@ function Skills() {
                     />
                 </Grid>
                 <Grid
-                    size={3}
+                    size={isMdUp ? 3 : 6}
                     sx={{
                         boxShadow: 3,
                         padding: 2,
@@ -122,7 +127,7 @@ function Skills() {
                     />
                 </Grid>
                 <Grid
-                    size={3}
+                    size={isMdUp ? 3 : 6}
                     sx={{
                         boxShadow: 3,
                         padding: 2,
@@ -163,8 +168,8 @@ function Skills() {
                     />
                 </Grid>
             </Grid>
-            <Grid container spacing={8} sx={{ marginY: 6 }}>
-                <Grid size={7}>
+            <Grid container spacing={isMdUp ? 8 : 4} sx={{ marginY: 6 }}>
+                <Grid size={isMdUp ? 7 : 12}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                         <div className="bg-blue-100 p-2 rounded-lg text-[#3b82f6]">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
@@ -175,49 +180,49 @@ function Skills() {
                     </Box>
                     <Box sx={{ padding: 2, boxShadow: 3, borderRadius: 2, marginY: 2, border: 1, borderColor: "#efefef", backgroundColor: 'white' }}>
                         <Grid container spacing={2}>
-                            <Grid size={2.5}>
+                            <Grid size={isMdUp ? 2.5 : 3.5}>
                                 HTML5 & CSS3
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 6.5} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={95} sx={{ borderRadius: 100, height: 6 }} />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 2}>
                                 95%
                             </Grid>
-                            <Grid size={2.5}>
+                            <Grid size={isMdUp ? 2.5 : 3.5}>
                                 TailwindCSS
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 6.5} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={85} sx={{ borderRadius: 100, height: 6 }} />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 2}>
                                 85%
                             </Grid>
-                            <Grid size={2.5}>
+                            <Grid size={isMdUp ? 2.5 : 3.5}>
                                 Vite.js
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 6.5} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={80} sx={{ borderRadius: 100, height: 6 }} />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 2}>
                                 80%
                             </Grid>
-                            <Grid size={2.5}>
+                            <Grid size={isMdUp ? 2.5 : 3.5}>
                                 Next.js
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 6.5} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={65} sx={{ borderRadius: 100, height: 6 }} />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 2}>
                                 65%
                             </Grid>
-                            <Grid size={2.5}>
+                            <Grid size={isMdUp ? 2.5 : 3.5}>
                                 React Native
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 6.5} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={60} sx={{ borderRadius: 100, height: 6 }} />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 2}>
                                 60%
                             </Grid>
                         </Grid>
@@ -238,7 +243,7 @@ function Skills() {
                             <Grid size={2.5}>
                                 DJango
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={95}
                                     sx={{ 
                                         borderRadius: 100, 
@@ -250,13 +255,13 @@ function Skills() {
                                     }} 
                                 />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 1.5}>
                                 95%
                             </Grid>
                             <Grid size={2.5}>
                                 Node.js
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={70} 
                                     sx={{ 
                                         borderRadius: 100, 
@@ -268,13 +273,13 @@ function Skills() {
                                     }}  
                                 />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 1.5}>
                                 70%
                             </Grid>
                             <Grid size={2.5}>
                                 FastApi
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={50}
                                     sx={{ 
                                         borderRadius: 100, 
@@ -286,7 +291,7 @@ function Skills() {
                                     }} 
                                 />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 1.5}>
                                 50%
                             </Grid>
                         </Grid>
@@ -304,7 +309,7 @@ function Skills() {
                             <Grid size={2.5}>
                                 LangChain
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={80}
                                     sx={{ 
                                         borderRadius: 100, 
@@ -316,13 +321,13 @@ function Skills() {
                                     }} 
                                 />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 1.5}>
                                 80%
                             </Grid>
                             <Grid size={2.5}>
                                 OpenCV
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={70} 
                                     sx={{ 
                                         borderRadius: 100, 
@@ -334,13 +339,13 @@ function Skills() {
                                     }}  
                                 />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 1.5}>
                                 70%
                             </Grid>
                             <Grid size={2.5}>
                                 Tensorflow
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={65}
                                     sx={{ 
                                         borderRadius: 100, 
@@ -352,13 +357,13 @@ function Skills() {
                                     }} 
                                 />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 1.5}>
                                 65%
                             </Grid>
                             <Grid size={2.5}>
                                 Keras
                             </Grid>
-                            <Grid size={8.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={60}
                                     sx={{ 
                                         borderRadius: 100, 
@@ -370,13 +375,13 @@ function Skills() {
                                     }} 
                                 />
                             </Grid>
-                            <Grid size={1}>
+                            <Grid size={isMdUp ? 1 : 1.5}>
                                 60%
                             </Grid>
                         </Grid>
                     </Box>
                 </Grid>
-                <Grid size={5}>
+                <Grid size={isMdUp ? 5 : 12}>
                     <Box sx={{ padding: 2, borderRadius: 2, marginY: 2, border: 1, borderColor: "#efefef", backgroundColor: 'white' }}>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                             <div className="bg-rose-100 p-2 rounded-lg text-rose-600">

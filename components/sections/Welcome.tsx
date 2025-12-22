@@ -3,17 +3,76 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 import Image from "next/image";
 
 import userImage from "@/public/user.png"
 
 function Welcome() {
+    const theme = useTheme();
+    const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+
     return (
         <Box sx={{position: "relative", width: "100%", marginBottom: 4}}>
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-blue-100/50 dark:bg-primary/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply dark:mix-blend-normal"></div>
             <Grid container spacing={1}>
-                <Grid size={6}>
+                {
+                    !isMdUp && (
+                        <Grid size={12} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
+                                <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px]">
+                                    <div className="absolute inset-0 rounded-full border-2 border-[#3b82f6]/20 animate-[spin_10s_linear_infinite]"></div>
+                                    <div className="absolute inset-4 rounded-full border border-dashed border-slate-300 animate-[spin_15s_linear_infinite_reverse]"></div>
+                                    <div className="absolute inset-4 rounded-full overflow-hidden bg-slate-100 shadow-2xl shadow-blue-500/10 border-4 border-white">
+                                        <Image
+                                            src={userImage}
+                                            alt="Javier Tinajo"
+                                            loading="eager"
+                                        />
+                                    </div>
+                                    <div className="absolute top-0 -left-18 sm:-left-10 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
+                                        <div className="bg-green-100 p-2 rounded-lg text-green-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
+                                                <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs text-slate-500 font-medium">Proyectos</p>
+                                            <p className="text-xs font-bold text-slate-900">15+ Completados</p>
+                                        </div>
+                                    </div>
+                                    <div className="absolute bottom-0 right-4 sm:-right-1 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
+                                        <div className="bg-blue-100 p-2 rounded-lg text-[#3b82f6]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
+                                                <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs text-slate-500 font-medium">Experiencia</p>
+                                            <p className="text-xs font-bold text-slate-900">5 Años</p>
+                                        </div>
+                                    </div>
+                                    <div className="absolute bottom-40 -right-24 sm:-right-34 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
+                                        <div className="bg-red-100 p-2 rounded-lg text-red-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
+                                                <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
+                                                <path d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z" />
+                                                <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs text-slate-500 font-medium">Máster Oficial</p>
+                                            <p className="text-xs font-bold text-slate-900">Inteligencia Artificial</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Grid>
+                    )
+                }
+                <Grid size={isMdUp ? 6 : 12}>
                     <h1 className="text-4xl sm:text-5xl lg:text-7xl leading-[1.1]">
                         Hola, soy <br className="hidden lg:block"/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] to-indigo-500">Javier Tinajo</span>
@@ -100,56 +159,60 @@ function Welcome() {
                         </Box>
                     </Box>
                 </Grid>
-                <Grid size={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
-                        <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px]">
-                            <div className="absolute inset-0 rounded-full border-2 border-[#3b82f6]/20 animate-[spin_10s_linear_infinite]"></div>
-                            <div className="absolute inset-4 rounded-full border border-dashed border-slate-300 animate-[spin_15s_linear_infinite_reverse]"></div>
-                            <div className="absolute inset-4 rounded-full overflow-hidden bg-slate-100 shadow-2xl shadow-blue-500/10 border-4 border-white">
-                                <Image
-                                    src={userImage}
-                                    alt="Javier Tinajo"
-                                    loading="eager"
-                                />
+                {
+                    isMdUp && (
+                        <Grid size={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
+                                <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px]">
+                                    <div className="absolute inset-0 rounded-full border-2 border-[#3b82f6]/20 animate-[spin_10s_linear_infinite]"></div>
+                                    <div className="absolute inset-4 rounded-full border border-dashed border-slate-300 animate-[spin_15s_linear_infinite_reverse]"></div>
+                                    <div className="absolute inset-4 rounded-full overflow-hidden bg-slate-100 shadow-2xl shadow-blue-500/10 border-4 border-white">
+                                        <Image
+                                            src={userImage}
+                                            alt="Javier Tinajo"
+                                            loading="eager"
+                                        />
+                                    </div>
+                                    <div className="absolute top-0 -left-4 sm:-left-10 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
+                                        <div className="bg-green-100 p-2 rounded-lg text-green-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+                                                <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs text-slate-500 font-medium">Proyectos</p>
+                                            <p className="text-sm font-bold text-slate-900">15+ Completados</p>
+                                        </div>
+                                    </div>
+                                    <div className="absolute bottom-0 -right-4 sm:-right-1 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
+                                        <div className="bg-blue-100 p-2 rounded-lg text-[#3b82f6]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+                                                <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs text-slate-500 font-medium">Experiencia</p>
+                                            <p className="text-sm font-bold text-slate-900">5 Años</p>
+                                        </div>
+                                    </div>
+                                    <div className="absolute bottom-70 right-34 sm:-right-34 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
+                                        <div className="bg-red-100 p-2 rounded-lg text-red-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+                                                <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
+                                                <path d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z" />
+                                                <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs text-slate-500 font-medium">Máster Oficial</p>
+                                            <p className="text-sm font-bold text-slate-900">Inteligencia Artificial</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="absolute top-0 -left-4 sm:-left-10 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
-                                <div className="bg-green-100 p-2 rounded-lg text-green-600">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                                        <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p className="text-xs text-slate-500 font-medium">Proyectos</p>
-                                    <p className="text-sm font-bold text-slate-900">15+ Completados</p>
-                                </div>
-                            </div>
-                            <div className="absolute bottom-0 -right-4 sm:-right-1 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
-                                <div className="bg-blue-100 p-2 rounded-lg text-[#3b82f6]">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                                        <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p className="text-xs text-slate-500 font-medium">Experiencia</p>
-                                    <p className="text-sm font-bold text-slate-900">5 Años</p>
-                                </div>
-                            </div>
-                            <div className="absolute bottom-70 right-34 sm:-right-34 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
-                                <div className="bg-red-100 p-2 rounded-lg text-red-600">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                                        <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
-                                        <path d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z" />
-                                        <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p className="text-xs text-slate-500 font-medium">Máster Oficial</p>
-                                    <p className="text-sm font-bold text-slate-900">Inteligencia Artificial</p>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
-                </Grid>
+                        </Grid>
+                    )
+                }
             </Grid>
             <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-indigo-100/50 dark:bg-indigo-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply dark:mix-blend-normal"></div>
         </Box>
