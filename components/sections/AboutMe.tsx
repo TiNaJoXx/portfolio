@@ -64,7 +64,7 @@ function AboutMe() {
                             <div className='w-3 h-3 rounded-full bg-[#efefef]'></div>
                         </Grid>
                         <Grid size={11} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <h5 className={`${isMdUp ? "text-lg" : "text-base"}`}>Analista de datos en proyecto {!isMdUp && <br/>} de investigación</h5>
+                            <h5 className={`${isMdUp ? "text-lg" : "text-base"}`}>Analista de datos {!isMdUp && <br/>} en proyecto {!isMdUp && <br/>} de investigación</h5>
                             <div className={`bg-gray-100 p-2 rounded-lg text-gray-600 ${!isMdUp && "text-xs"}`}>
                                 oct. 2023 - dic. 2023
                             </div>

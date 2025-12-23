@@ -16,7 +16,11 @@ function Welcome() {
 
     return (
         <Box sx={{position: "relative", width: "100%", marginBottom: 4}}>
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-blue-100/50 dark:bg-primary/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply dark:mix-blend-normal"></div>
+            {
+                isMdUp && (
+                    <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-blue-100/50 dark:bg-primary/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply dark:mix-blend-normal"></div>
+                )
+            }
             <Grid container spacing={1}>
                 {
                     !isMdUp && (
@@ -32,7 +36,7 @@ function Welcome() {
                                             loading="eager"
                                         />
                                     </div>
-                                    <div className="absolute top-0 -left-18 sm:-left-10 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
+                                    <div className="absolute -top-8 -left-8 sm:-left-10 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
                                         <div className="bg-green-100 p-2 rounded-lg text-green-600">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
                                                 <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" />
@@ -43,7 +47,7 @@ function Welcome() {
                                             <p className="text-xs font-bold text-slate-900">15+ Completados</p>
                                         </div>
                                     </div>
-                                    <div className="absolute bottom-0 right-4 sm:-right-1 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
+                                    <div className="absolute bottom-0 left-4 sm:-right-1 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
                                         <div className="bg-blue-100 p-2 rounded-lg text-[#3b82f6]">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
                                                 <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
@@ -54,7 +58,7 @@ function Welcome() {
                                             <p className="text-xs font-bold text-slate-900">5 Años</p>
                                         </div>
                                     </div>
-                                    <div className="absolute bottom-40 -right-24 sm:-right-34 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
+                                    <div className="absolute bottom-20 -right-4 sm:-right-34 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
                                         <div className="bg-red-100 p-2 rounded-lg text-red-600">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
                                                 <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
@@ -83,7 +87,7 @@ function Welcome() {
                     <p className="mt-4 sm:text-lg text-slate-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                         Especializado en construir aplicaciones web escalables con la tecnología más moderna y principios de diseño moderno. Transformo ideas complejas en experiencias digitales elegantes y funcionales.
                     </p>
-                    <Box sx={{ display: 'flex', gap: 2, marginY: 4 }}>
+                    <Box sx={{ display: 'flex', gap: 2, marginY: 4, flexDirection: isMdUp ? "row" : "column" }}>
                         <Button sx={{ 
                             textTransform: 'none', 
                             backgroundColor: "#3b82f6", 
@@ -214,7 +218,11 @@ function Welcome() {
                     )
                 }
             </Grid>
-            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-indigo-100/50 dark:bg-indigo-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply dark:mix-blend-normal"></div>
+            {
+                isMdUp && (
+                    <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-indigo-100/50 dark:bg-indigo-500/10 rounded-full blur-3xl pointer-events-none mix-blend-multiply dark:mix-blend-normal"></div>
+                )
+            }
         </Box>
     )
 }
