@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -157,11 +157,12 @@ function Projects() {
     const theme = useTheme();
     const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
 
-    const [visibleProjects, setVisibleProjects] = useState(isMdUp ? 3 : 4);
     const [expanded, setExpanded] = useState(false);
 
+    const defaultVisible = isMdUp ? 3 : 4;
+    const visible = expanded ? dataProjects.length : defaultVisible;
+
     const handleLoadMore = () => {
-        setVisibleProjects(dataProjects.length);
         setExpanded(true);
     };
 
@@ -170,7 +171,7 @@ function Projects() {
             <h2 className='mb-8 text-xl sm:text-2xl'>Proyectos</h2>
             <Grid container rowSpacing={isMdUp ? 4 : 2} columnSpacing={isMdUp ? 4 : 2}>
                 {
-                    dataProjects.slice(0, visibleProjects).map((project, index) => 
+                    dataProjects.slice(0, visible).map((project, index) => 
                         <Grid 
                             key={project.id} 
                             size={isMdUp ? 4 : 6}
@@ -194,7 +195,7 @@ function Projects() {
                     )
                 }
             </Grid>
-            {visibleProjects < dataProjects.length && (
+            {visible < dataProjects.length && (
                 <Box sx={{ textAlign: "center", marginTop: isMdUp ? 8 : 4 }}>
                     <Button
                         sx={{ textTransform: "none" }}
