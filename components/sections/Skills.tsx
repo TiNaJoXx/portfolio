@@ -180,49 +180,49 @@ function Skills() {
                     </Box>
                     <Box sx={{ padding: 2, boxShadow: 3, borderRadius: 2, marginY: 2, border: 1, borderColor: "#efefef", backgroundColor: 'white' }}>
                         <Grid container spacing={2}>
-                            <Grid size={isMdUp ? 2.5 : 3.5}>
+                            <Grid size={isMdUp ? 2.5 : 4.5} className={`${!isMdUp && "text-sm"}`}>
                                 HTML5 & CSS3
                             </Grid>
-                            <Grid size={isMdUp ? 8.5 : 6.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 5.5} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={95} sx={{ borderRadius: 100, height: 6 }} />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 2}>
+                            <Grid size={isMdUp ? 1 : 2} className={`${!isMdUp && "text-sm"}`}>
                                 95%
                             </Grid>
-                            <Grid size={isMdUp ? 2.5 : 3.5}>
+                            <Grid size={isMdUp ? 2.5 : 4.5} className={`${!isMdUp && "text-sm"}`}>
                                 TailwindCSS
                             </Grid>
-                            <Grid size={isMdUp ? 8.5 : 6.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 5.5} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={85} sx={{ borderRadius: 100, height: 6 }} />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 2}>
+                            <Grid size={isMdUp ? 1 : 2} className={`${!isMdUp && "text-sm"}`}>
                                 85%
                             </Grid>
-                            <Grid size={isMdUp ? 2.5 : 3.5}>
+                            <Grid size={isMdUp ? 2.5 : 4.5} className={`${!isMdUp && "text-sm"}`}>
                                 Vite.js
                             </Grid>
-                            <Grid size={isMdUp ? 8.5 : 6.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 5.5} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={80} sx={{ borderRadius: 100, height: 6 }} />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 2}>
+                            <Grid size={isMdUp ? 1 : 2} className={`${!isMdUp && "text-sm"}`}>
                                 80%
                             </Grid>
-                            <Grid size={isMdUp ? 2.5 : 3.5}>
+                            <Grid size={isMdUp ? 2.5 : 4.5} className={`${!isMdUp && "text-sm"}`}>
                                 Next.js
                             </Grid>
-                            <Grid size={isMdUp ? 8.5 : 6.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 5.5} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={65} sx={{ borderRadius: 100, height: 6 }} />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 2}>
+                            <Grid size={isMdUp ? 1 : 2} className={`${!isMdUp && "text-sm"}`}>
                                 65%
                             </Grid>
-                            <Grid size={isMdUp ? 2.5 : 3.5}>
+                            <Grid size={isMdUp ? 2.5 : 4.5} className={`${!isMdUp && "text-sm"}`}>
                                 React Native
                             </Grid>
-                            <Grid size={isMdUp ? 8.5 : 6.5} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 5.5} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={60} sx={{ borderRadius: 100, height: 6 }} />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 2}>
+                            <Grid size={isMdUp ? 1 : 2} className={`${!isMdUp && "text-sm"}`}>
                                 60%
                             </Grid>
                         </Grid>
@@ -240,7 +240,7 @@ function Skills() {
                     </Box>
                     <Box sx={{ padding: 2, boxShadow: 3, borderRadius: 2, marginY: 2, border: 1, borderColor: "#efefef", backgroundColor: 'white' }}>
                         <Grid container spacing={2}>
-                            <Grid size={2.5}>
+                            <Grid size={2.5} className={`${!isMdUp && "text-sm"}`}>
                                 DJango
                             </Grid>
                             <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
@@ -255,10 +255,10 @@ function Skills() {
                                     }} 
                                 />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 1.5}>
+                            <Grid size={isMdUp ? 1 : 1.5} className={`${!isMdUp && "text-sm"}`}>
                                 95%
                             </Grid>
-                            <Grid size={2.5}>
+                            <Grid size={2.5} className={`${!isMdUp && "text-sm"}`}>
                                 Node.js
                             </Grid>
                             <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
@@ -273,10 +273,10 @@ function Skills() {
                                     }}  
                                 />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 1.5}>
+                            <Grid size={isMdUp ? 1 : 1.5} className={`${!isMdUp && "text-sm"}`}>
                                 70%
                             </Grid>
-                            <Grid size={2.5}>
+                            <Grid size={2.5} className={`${!isMdUp && "text-sm"}`}>
                                 FastApi
                             </Grid>
                             <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
@@ -291,7 +291,7 @@ function Skills() {
                                     }} 
                                 />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 1.5}>
+                            <Grid size={isMdUp ? 1 : 1.5} className={`${!isMdUp && "text-sm"}`}>
                                 50%
                             </Grid>
                         </Grid>
@@ -306,10 +306,10 @@ function Skills() {
                     </Box>
                     <Box sx={{ padding: 2, boxShadow: 3, borderRadius: 2, marginY: 2, border: 1, borderColor: "#efefef", backgroundColor: 'white' }}>
                         <Grid container spacing={2}>
-                            <Grid size={2.5}>
+                            <Grid size={isMdUp ? 2.5 : 3.5} className={`${!isMdUp && "text-sm"}`}>
                                 LangChain
                             </Grid>
-                            <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 7} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={80}
                                     sx={{ 
                                         borderRadius: 100, 
@@ -321,13 +321,13 @@ function Skills() {
                                     }} 
                                 />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 1.5}>
+                            <Grid size={isMdUp ? 1 : 1.5} className={`${!isMdUp && "text-sm"}`}>
                                 80%
                             </Grid>
-                            <Grid size={2.5}>
+                            <Grid size={isMdUp ? 2.5 : 3.5} className={`${!isMdUp && "text-sm"}`}>
                                 OpenCV
                             </Grid>
-                            <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 7} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={70} 
                                     sx={{ 
                                         borderRadius: 100, 
@@ -339,13 +339,13 @@ function Skills() {
                                     }}  
                                 />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 1.5}>
+                            <Grid size={isMdUp ? 1 : 1.5} className={`${!isMdUp && "text-sm"}`}>
                                 70%
                             </Grid>
-                            <Grid size={2.5}>
+                            <Grid size={isMdUp ? 2.5 : 3.5} className={`${!isMdUp && "text-sm"}`}>
                                 Tensorflow
                             </Grid>
-                            <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 7} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={65}
                                     sx={{ 
                                         borderRadius: 100, 
@@ -357,13 +357,13 @@ function Skills() {
                                     }} 
                                 />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 1.5}>
+                            <Grid size={isMdUp ? 1 : 1.5} className={`${!isMdUp && "text-sm"}`}>
                                 65%
                             </Grid>
-                            <Grid size={2.5}>
+                            <Grid size={isMdUp ? 2.5 : 3.5} className={`${!isMdUp && "text-sm"}`}>
                                 Keras
                             </Grid>
-                            <Grid size={isMdUp ? 8.5 : 8} sx={{ display: 'grid', alignItems: 'center' }}>
+                            <Grid size={isMdUp ? 8.5 : 7} sx={{ display: 'grid', alignItems: 'center' }}>
                                 <LinearProgress variant="determinate" value={60}
                                     sx={{ 
                                         borderRadius: 100, 
@@ -375,7 +375,7 @@ function Skills() {
                                     }} 
                                 />
                             </Grid>
-                            <Grid size={isMdUp ? 1 : 1.5}>
+                            <Grid size={isMdUp ? 1 : 1.5} className={`${!isMdUp && "text-sm"}`}>
                                 60%
                             </Grid>
                         </Grid>
