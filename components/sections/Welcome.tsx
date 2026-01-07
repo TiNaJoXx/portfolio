@@ -14,6 +14,20 @@ function Welcome() {
     const theme = useTheme();
     const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
 
+    const handleScrollTo = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const headerOffset = 40; // Altura total del AppBar + SubHeader en px
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth',
+            });
+        }
+    };
+
     return (
         <Box sx={{position: "relative", width: "100%", marginBottom: 4}}>
             {
@@ -44,7 +58,7 @@ function Welcome() {
                                         </div>
                                         <div>
                                             <p className="text-xs text-slate-500 font-medium">Proyectos</p>
-                                            <p className="text-xs font-bold text-slate-900">15+ Completados</p>
+                                            <p className="text-xs font-bold text-slate-900">+15 Completados</p>
                                         </div>
                                     </div>
                                     <div className="absolute bottom-0 left-4 sm:-right-1 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
@@ -55,7 +69,7 @@ function Welcome() {
                                         </div>
                                         <div>
                                             <p className="text-xs text-slate-500 font-medium">Experiencia</p>
-                                            <p className="text-xs font-bold text-slate-900">5 Años</p>
+                                            <p className="text-xs font-bold text-slate-900">+5 Años</p>
                                         </div>
                                     </div>
                                     <div className="absolute bottom-20 -right-4 sm:-right-34 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce">
@@ -99,16 +113,22 @@ function Welcome() {
                             '&:hover svg': {
                                 transform: 'translateX(4px)',
                             },
-                        }}>
+                        }} onClick={() => { handleScrollTo("projects")}}>
                             Ver Proyectos
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6 ml-4">
                                 <path fillRule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
                             </svg>
                         </Button>
-                        <Button sx={{ 
-                            textTransform: 'none', 
-                            paddingX: 2
-                        }}>
+                        <Button
+                            component="a"
+                            href="/cv/CV.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            sx={{ 
+                                textTransform: 'none', 
+                                paddingX: 2
+                            }}
+                        >
                             Descargar CV
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 ml-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
