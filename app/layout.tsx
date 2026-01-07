@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "@/styles/globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,15 +22,9 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
       </head>
       <body className={`${manrope.variable}`}>
         {children}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.addEventListener('load', function() {
-                document.documentElement.classList.add('loaded');
-              });
-            `,
-          }}
-        />
+        <Script id="add-loaded-class" strategy="afterInteractive">
+          {`document.documentElement.classList.add('loaded');`}
+        </Script>
       </body>
     </html>
   );
